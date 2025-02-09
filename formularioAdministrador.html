@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Información del Profesor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f9;
+    }
+    form {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    input[type="file"] {
+      padding: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Formulario de Información del Profesor</h2>
+
+<form action="" method="POST" enctype="multipart/form-data">
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre"  required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{3,100}" title="Debe ingresar un nombre válido (solo letras y espacios, entre 3 y 100 caracteres)">
+
+  <label for="id">Número de Identificación</label>
+  <input type="text" id="id" name="id" required>
+
+  <label for="email">Correo Electrónico</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="telefono">Número de Teléfono</label>
+  <input type="text" id="telefono" name="telefono"  pattern="^\(\+\d{1,3}\)\s?\d{9}$" title="Debe ingresar un número de teléfono válido, por ejemplo (+34) 612345678">
+
+  <label for="direccion">Dirección</label>
+  <textarea id="direccion" name="direccion" rows="3"></textarea>
+
+  <label for="fecha-nacimiento">Fecha de Nacimiento</label>
+  <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+
+  <label for="genero">Género</label>
+  <select id="genero" name="genero">
+    <option value="">Selecciona una opción</option>
+    <option value="masculino">Masculino</option>
+    <option value="femenino">Femenino</option>
+    <option value="otro">Otro</option>
+    <option value="prefiero-no-decirlo">Prefiero no decirlo</option>
+  </select>
+
+  <label for="rol">Rol</label>
+  <select id="rol" name="rol" required>
+    <option value="">Selecciona un rol</option>
+    <option value="profesor">Profesor</option>
+    <option value="coordinador">Coordinador</option>
+    <option value="jefe-departamento">Jefe de Departamento</option>
+  </select>
+
+  <label for="departamento">Departamento o Área</label>
+  <select id="departamento" name="departamento">
+    <option value="">Selecciona un departamento</option>
+    <option value="matematicas">Matemáticas</option>
+    <option value="lengua">Lengua</option>
+    <option value="ciencias-sociales">Ciencias Sociales</option>
+  </select>
+
+  <label for="tipo-contrato">Tipo de Contrato</label>
+  <select id="tipo-contrato" name="tipo-contrato">
+    <option value="">Selecciona un tipo de contrato</option>
+    <option value="tiempo-completo">Tiempo Completo</option>
+    <option value="medio-tiempo">Medio Tiempo</option>
+    <option value="sustituto">Sustituto</option>
+  </select>
+
+  <label for="fecha-ingreso">Fecha de Ingreso</label>
+  <input type="date" id="fecha-ingreso" name="fecha-ingreso">
+
+  <label for="estado">Estado del Profesor</label>
+  <select id="estado" name="estado" required>
+    <option value="">Selecciona un estado</option>
+    <option value="activo">Activo</option>
+    <option value="en-licencia">En licencia</option>
+    <option value="inactivo">Inactivo</option>
+  </select>
+
+  <label for="foto">Foto de Perfil</label>
+  <input type="file" id="foto" name="foto" >
+
+  <label for="notas">Notas Adicionales</label>
+  <textarea id="notas" name="notas" rows="3" placeholder="Escribe cualquier información adicional aquí"></textarea>
+
+  <label for="password">Contraseña</label>
+  <input type="password" id="password" name="password"  required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,}" title="Debe incluir al menos una letra mayúscula, una minúscula, un número y un carácter especial, con un mínimo de 8 caracteres">
+
+  <label for="confirm-password">Confirmar Contraseña</label>
+  <input type="password" id="confirm-password" name="confirm-password"  required>
+
+  <label for="centro">Centro</label>
+  <select id="centro" name="centro" required>
+    <option value="">Selecciona un centro</option>
+    <option value="escuela-secundaria-a">Escuela Secundaria A</option>
+    <option value="colegio-abc">Colegio ABC</option>
+  </select>
+
+  <button type="submit">Enviar</button>
+</form>
+
+</body>
+</html>
